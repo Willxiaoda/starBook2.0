@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name =”viewport” content=” width=device-width, initial-scale=1″ />
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="css/J_newlogin.css">
+	<script type="text/javascript">
+	function browserRedirect() { 
+	var sUserAgent= navigator.userAgent.toLowerCase(); 
+	var bIsIpad= sUserAgent.match(/ipad/i) == "ipad"; 
+	var bIsIphoneOs= sUserAgent.match(/iphone os/i) == "iphone os"; 
+	var bIsMidp= sUserAgent.match(/midp/i) == "midp"; 
+	var bIsUc7= sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4"; 
+	var bIsUc= sUserAgent.match(/ucweb/i) == "ucweb"; 
+	var bIsAndroid= sUserAgent.match(/android/i) == "android"; 
+	var bIsCE= sUserAgent.match(/windows ce/i) == "windows ce"; 
+	var bIsWM= sUserAgent.match(/windows mobile/i) == "windows mobile"; 
+	 
+	if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) { 
+	window.location.href= '__APP__/Home/index/mobileLogin.html'; 
+	} else { 
+	// window.location= '__APP__/Home/index/index.html'; 
+	} 
+	} 
+	browserRedirect(); 
+	</script>
+	 <script type="text/javascript" src="__PUBLIC__/js/login.js" ></script>
+	<title>登录</title>
+</head>
+<body>
+	<div id="container">
+		<div id="xin">
+		</div>
+		<!-- <img src="__PUBLIC__/images/background.png" alt="" id="one"> -->
+		<div id="login">
+			<!-- <img src="./images/lbox1.png" alt=""> -->
+			<div id="form"> 
+				<!-- <form action="Login.php" method="POST" name="Login" id="Login"> -->
+				<form action="__APP__/Home/index/login.html" method="POST" name="Login" id="Login"> 
+							<label for="username">学号：</label><br>
+							<input type="text" id="username" name="studentnum" placeholder="请输入学号" maxlength="12"  style="padding-left:10px;">
+							<span id="conten">请输入12位的正确学号!</span>	
+						<div id="psdd" >
+							<label for="password">密码：</label><br>
+							<input type="password" id="psd" placeholder="请输入密码" name="password"  style="padding-left:10px;">
+							<span id="conten2">请输入密码</span>
+						</div>
+							<!-- <br><input type="checkbox" id="remember" >记住密码 -->
+						<div  id="onsubmit">
+								<a href="__APP__/Home/index/index2.html"><input readonly value="  " id="register"  ></a>				<input type="submit" value="  " id="Logins" >
+				</form>
+						</div>
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

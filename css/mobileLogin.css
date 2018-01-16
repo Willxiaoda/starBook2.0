@@ -1,0 +1,94 @@
+body,
+html,
+p,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+button,
+input,
+textarea,
+th,
+td{
+	margin: 0;
+	padding: 0;
+}
+
+
+
+#container{
+	width: 73.3333%;
+	height: auto;
+	margin: 0 auto;
+}
+
+#container #mobileLogo{
+	width: 420px;
+	height: 200px;
+	margin: 460px auto 80px;
+}
+
+#container #mobileLogo img{
+	position: relative;
+	top: -80px;
+	width: 420px;
+	height: 200px;
+}
+
+#container #form{
+	margin-top: 5.468%;
+	width: 100%;
+	height: auto;
+	font-family: "微软雅黑";
+}
+
+#container label{
+	font-size: 60px;
+	font-family:"微软雅黑";;
+	color: #9c5f20;
+	/*display: none;*/
+}
+
+#container #conten,#container #conten2{
+	font-size: 40px;
+}
+#form #psd,#username{
+	/*outline:medium;*/
+	width: 97%;
+	height: 100px;
+	margin: 20px 0 10px 0;
+	border: none;
+	background-color: transparent;
+	background-color: #f0d4a4;
+	outline:none;
+	font-size: 45px;
+}
+input::-webkit-input-placeholder { 
+		/*color:#D0C3E0 ;*/
+		color:#bc5211;
+		opacity: 0.7;
+
+}
+
+span{
+	display: block;	
+	font-family: "微软雅黑";
+	color: gray;
+	display: none;
+}
+#psd,#username{
+	padding-left: 30px;
+}
+
+
+
+
+
+footer #footer{
+	width: 425px;
+	margin: 0 auto 80px;
+	font-size: 45px;
+	color: #9c5f20;
+}

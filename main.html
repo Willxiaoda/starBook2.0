@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>管理员页面</title>
+	<style type="text/css">
+	.mask .dialog .close{
+		position: relative;
+		right: 20px;
+		top: 15px;
+		width: 32px;
+		height: 32px;
+		float: right;
+		background: url(__PUBLIC__/images/icon_close.png) left center no-repeat;
+		cursor: pointer;
+	}
+	</style>
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/J_addbook.css">
+</head>
+<body>
+	<header>
+		<div id="head">
+			<div id="logo">
+				<a href="http://www.xingkong.us"><img src="__PUBLIC__/images/logo.png" /></a>
+				<img src="__PUBLIC__/images/copyright.png" style="margin-left:10%;margin-bottom:8px" />
+			</div>
+		</div>
+		<div id="choose">
+			<div id="chooseCon">
+				<p>温馨提示：首次使用时请先添加相应班级的书单。</p>
+			</div>
+		</div>
+	</header>
+	<container>
+		<div id="content">
+			<div id="button"><a href="add.html"><input type="button" value="+ 添加书单" id="add"></a>
+			<a id="add" style="float:right;line-height:50px;text-align:center;" href="out.html">退出登录
+			</a>
+			</div>
+		</div>
+		<!-- 遮罩层 -->
+		<div class="mask" id="mask">
+			<div class="dialog" id="dialog">
+				<div class="close" id="close"></div>
+				<div class="title">分享</div>
+				<div class="main">
+					<p>复制链接后发送到需要购买的人</p>
+					<!-- <a href="#" id="booListUrl">
+					</a> -->
+					<textarea href="#" readonly id="booListUrl">
+					</textarea>
+					<input type="button" name="copy" value="复制链接到粘贴板" id="copy" />
+				</div>
+			</div>
+		</div>
+	</container>
+	<!-- <footer>
+			<div id= "foot">@星空技术研发中心创作</div>
+	</footer> -->
+</body>
+<script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+<script type="text/javascript">var num = '{$jsondata}';var app = '__APP__';var server='{$_SERVER["SERVER_NAME"]}'</script>
+<script type="text/javascript" src="__PUBLIC__/js/J_addbook.js"></script>
+</html>

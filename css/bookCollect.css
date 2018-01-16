@@ -1,0 +1,41 @@
+#container #bookShelf #type ul>li:last-child{
+	text-align: center;
+}
+#container #bookShelf .bookList ul>li:last-child{
+	padding-left: 0;
+}
+#container #title #title_right a{
+	float: left;
+	display: block;
+	margin-left: 20px;
+	height: 30px;
+	line-height: 30px;
+	text-decoration: none;
+	text-align: center;
+	border: 1px solid #000;
+	color: #11449e;
+	background-color: buttonface;
+}
+#container #title #title_right>a:first-child{
+	width: 200px;
+}
+#container #title #title_right>a:last-child{
+	width: 60px;
+}
+#container #total{
+	margin: 80px 100px 100px 0;
+	color: red;
+	float: right;
+	font-size: 34px;
+}
+#container #total #totalMoney{
+	width: 150px;
+	height: 50px;
+	color: red;
+	font-size: 34px;
+	border: none;
+}
+pre{
+	font-weight: bolder;
+	font-size: 20px;
+}

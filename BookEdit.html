@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>编辑书单</title>
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/starAddbook.css">
+	<script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+	<script type="text/javascript">	var data = '{$jsondata}';</script>
+	<script type="text/javascript" src="__PUBLIC__/js/BookEdit.js"></script>
+</head>
+<body>
+	<header>
+		<div id="head">
+			<div id="logo">
+				<a href="http://www.xingkong.us"><img src="__PUBLIC__/images/logo.png" /></a>
+				<img src="__PUBLIC__/images/copyright.png" style="margin-left:10%;margin-bottom:8px" />
+			</div>
+		</div>
+	</header>
+	<form method="post" action="changelist.html" >
+		<div id="container">
+			<div id="title">
+				<div id="title_left" style="width:550px;height:50px">
+					<label style="font-size:18px;font-weight:normal">书单名字：<input id="bookListName" name="listname" value="书单1" style="width:450px;height:30px;font-size:20px;font-family:'微软雅黑'" /></label>
+				</div>
+				<!-- 后端input框 -->
+				<input id="list" name="listID" readonly style="display:none" />
+				<div id="title_right">
+					<!-- <div class="edit">编辑书单名字</div> -->
+					<div class="back"><a href="main.html">返回</a></div>
+				</div>
+			</div>
+			<div id="bookShelf">
+			</div>
+			<div id="add">添加</div>
+			<input type="submit" value="保存" id="sure">
+		</div>
+	</form>
+</body>
+</html>

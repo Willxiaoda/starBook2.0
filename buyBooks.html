@@ -1,0 +1,222 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+	<title>无标题</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/buyBooks.css">
+	<script type="text/javascript">
+	function browserRedirect() { 
+	var sUserAgent= navigator.userAgent.toLowerCase(); 
+	var bIsIpad= sUserAgent.match(/ipad/i) == "ipad"; 
+	var bIsIphoneOs= sUserAgent.match(/iphone os/i) == "iphone os"; 
+	var bIsMidp= sUserAgent.match(/midp/i) == "midp"; 
+	var bIsUc7= sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4"; 
+	var bIsUc= sUserAgent.match(/ucweb/i) == "ucweb"; 
+	var bIsAndroid= sUserAgent.match(/android/i) == "android"; 
+	var bIsCE= sUserAgent.match(/windows ce/i) == "windows ce"; 
+	var bIsWM= sUserAgent.match(/windows mobile/i) == "windows mobile"; 
+	 
+	if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) { 
+	// window.location= '__APP__/Home/Student/buyBooks.html?listID={$Think.get.listID}'; 
+	} else { 
+	window.location= '__APP__/Home/Student/choosebook.html?listID={$Think.get.listID}'; 
+	} 
+	} 
+	browserRedirect(); 
+	</script>
+	<script type="text/javascript">
+		var bookData='{$jsondata}';
+		bookData=JSON.parse(bookData);
+		window.onload = function(){
+			'use strict'
+
+			var content = document.getElementById('content');
+			renderBookList(content, bookData);
+
+
+			function renderBookList(obj, data){
+					console.log(data.booknum)
+				var bookListHTML = '<ul class="bookList" id="bookList">';
+				for(var i = 0; i < data.booknum.length; i++){
+					bookListHTML += '<li class="notBuy" data=' + data.bid[i] +' price=' + data.Dprice[i] +'>' +
+						'<span class="bookName">' + data.book[i] +'</span>' +
+						'<span class="price">￥' + data.Dprice[i] + '</span>' +
+						'<span class="icon"></span>' +
+					'</li>';
+				}
+				bookListHTML += '</ul>';
+				obj.innerHTML = bookListHTML;
+			}
+
+			var buyBtn = document.getElementById('confirmBtn');
+			var books = document.getElementById('bookList').getElementsByTagName('li');
+			var booksLen = books.length;
+			var bookList = new bookListObj();
+			for(var i = 0; i < booksLen; i++){		
+				controller.eventHandler(books[i], 'click', function(){
+					bookList.clickBook(this.getAttribute('data'),this.getAttribute('price'));
+					if(this.className == 'notBuy'){
+						this.getElementsByTagName('span')[2].style.backgroundImage = 'url(__PUBLIC__/img/isBuy.png)';
+						this.className = 'isBuy';
+					}else{
+						this.className = 'notBuy';
+						this.getElementsByTagName('span')[2].style.backgroundImage = 'url(__PUBLIC__/img/notBuy.png)';
+					}
+
+					if(bookList.bookListObj.length){
+						buyBtn.style.backgroundColor = '#00BB9C';
+					}else{
+						buyBtn.style.backgroundColor = '#cccccc';
+					}
+					
+					var sumPrice = document.getElementById('sumPrice');
+					bookList.sumPrice = bookList.totalPrice();
+					sumPrice.innerText = '总价：￥' + bookList.sumPrice;
+
+					console.log(bookList.bookListObj)
+
+				})
+			}
+		/*	
+			setInterval(function(){
+				console.log(bookList.bookListObj);
+			},1000)
+			*/
+			var loginCon = document.getElementById('loginCon');
+			var loginStatus = document.getElementById('loginStatus');
+			var login = document.getElementById('login');
+			
+			controller.eventHandler(login, 'click', function(){
+				loginCon.style.transform = 'translate3d(0, 40px, 0)';
+			});
+			var loginBtn = document.getElementById('loginBtn');
+			controller.eventHandler(loginBtn, 'click', function(){
+				loginCon.style.transform = 'translate3d(0, -160px, 0)';
+				var stuName = document.getElementById('stuName').value;
+				var stuNum = document.getElementById('stuNum').value;
+				judgeLogin(stuNum, stuName);
+			});
+			
+			controller.eventHandler(buyBtn, 'click', function () {
+				var books = [], bookListLen = bookList.bookListObj.length;
+				for(var i = 0; i < bookListLen; i++){
+					books.push(bookList.bookListObj[i].bookId);
+				}
+				console.log(bookList)
+				console.log(books)
+
+				var data = {
+					username: bookList.stuName,
+					stunum: bookList.stuNum,
+					books: books,
+					ensure:'sure',
+				}
+				controller.ajax({
+					//url: 'http://127.0.0.1/study/starBook.php/Home/Student/submit?listID=VDBSQlBRPT0=',
+					url: '__APP__/Home/Student/appsubmit.html?listID={$Think.get.listID}',
+					//sendData: JSON.stringify(data),
+					sendData: data,
+					type: 'POST',
+					dataType: 'text',
+					success: function(resp){
+						console.log(resp);
+					}
+				})
+			});
+
+			function judgeLogin(stuNum, stuName){
+				var loginStatus = document.getElementById('loginStatus');
+				if(stuNum > 100000){
+					bookList.stuName = stuName;
+					bookList.stuNum = stuNum;
+					loginStatus.innerHTML = '<span class="stuNumShow">学号：' + stuNum + '</span><span class"stuNameShow">姓名：' + stuName + '</span><span class="loginEditIcon"></span>'
+					loginStatus.style.backgroundColor = '#00BB9C';
+					loginStatus.style.color = '#FFFFFF';
+				}
+			}
+
+
+		}
+	</script>
+	<script type="text/javascript" src="__PUBLIC__/controller/common.js"></script>
+	<script src="__PUBLIC__/view/bookListTemplate.js" type="text/javascript" charset="utf-8"></script>
+	<script src="__PUBLIC__/controller/bookModel.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src="__PUBLIC__/controller/buyBook.js"></script>
+	<style type="text/css">
+		.top .backBtn{
+			width: 25px;
+			height: 25px;
+			background-image: url(__PUBLIC__/img/backBtn.png);
+			background-position: center;
+			background-size: cover;
+		}
+		.content ul li .icon{
+			float: right;
+			margin-right: 20px;
+			margin-top: 15px;
+			width: 25px;
+			height: 25px;
+			background-image: url(__PUBLIC__/img/notBuy.png);
+			display: inline-block;
+			background-size: cover;
+			background-position: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="loginCon" id="loginCon">
+		<input type="text" placeholder="请输入学号" name="stunum" id="stuNum" />
+		<input type="text" placeholder="请输入姓名" name="username" id="stuName" />
+		<div class="loginBtn" id="loginBtn">登陆</div>
+	</div>
+	<div class="header">
+		<div class="top">
+			<div class="backBtnCon">
+				<div class="backBtn"></div>
+			</div>
+		</div>
+		<div class="loginStatus" id="loginStatus">
+			<span>还没有登录，请登录</span><div class="login" id="login">登陆</div>
+			
+		</div>
+	</div>
+	<div class="content" id="content">
+		<!-- <ul class="bookList" id="bookList">
+			<li class="notBuy" data='1'>
+				<span class='bookName'>书名</span>
+				<span class="price">￥22</span>
+				<span class="icon"></span>
+			</li>
+			<li class="notBuy" data='2'>
+				<span class='bookName'>书名</span>
+				<span class="price">￥22</span>
+				<span class="icon"></span>
+			</li>
+			<li class="notBuy" data='3'>
+				<span class='bookName'>书名</span>
+				<span class="price">￥22</span>
+				<span class="icon"></span>
+			</li>
+			<li class="notBuy" data='4'>
+				<span class='bookName'>书名</span>
+				<span class="price">￥22</span>
+				<span class="icon"></span>
+			</li>
+			<li class="notBuy" data='5'>
+				<span class='bookName'>书名</span>
+				<span class="price">￥22</span>
+				<span class="icon"></span>
+			</li>
+			
+		</ul> -->
+	</div>
+	<div class="footer">
+		<div class="confirmBtn" id="confirmBtn">确认购买</div>
+		<div class="sumPrice" id="sumPrice">总价：￥0</div>
+	</div>
+</body>
+	<script type="text/javascript">
+		
+		console.log(JSON.parse(book));
+	</script>
+</html>

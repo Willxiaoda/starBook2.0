@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>书单详情</title>
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/person.css" />
+	<script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+</head>
+<body>
+	<header>
+		<div id="head">
+			<div id="logo">
+				<a href="http://www.xingkong.us"><img src="__PUBLIC__/images/logo.png" /></a>
+				<img src="__PUBLIC__/images/copyright.png" style="margin-left:10%;margin-bottom:8px" />
+			</div>
+		</div>
+	</header>
+	<div id="container">
+		<div id="title">
+			<div id="title_content_left">
+				<span>姓名：</span>
+				<input type="text" name="username" id="stuName" readonly />
+				<span>学号：</span>
+				<input type="text" name="stunum" id="stuNum" readonly />
+			</div>
+			<div id="title_content_right">
+				<a href="situation.html?listID={$Think.get.listID}">返回</a>
+			</div>
+		</div>
+		<form method="post" action="">
+			 <div id="bookShelf" class="bookInfo">
+				<div id="type">
+					<ul>
+						<li>书名</li>
+						<li>价格</li>
+						<li>折后价</li>
+					</ul>
+				</div>
+			</div>
+			<!-- <input type="submit" name="ensure" id="ensure" value="提交" /> -->
+		</form>
+		<div id="money">
+		</div>
+	</div>
+</body>
+<script type="text/javascript" >var a='{$jsondata}';</script>
+<script type="text/javascript" src="__PUBLIC__/js/person.js" ></script>
+
+</html>

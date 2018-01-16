@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>书单详情</title>
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/starBookList.css" />
+	<script type="text/javascript">
+	function browserRedirect() { 
+	var sUserAgent= navigator.userAgent.toLowerCase(); 
+	var bIsIpad= sUserAgent.match(/ipad/i) == "ipad"; 
+	var bIsIphoneOs= sUserAgent.match(/iphone os/i) == "iphone os"; 
+	var bIsMidp= sUserAgent.match(/midp/i) == "midp"; 
+	var bIsUc7= sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4"; 
+	var bIsUc= sUserAgent.match(/ucweb/i) == "ucweb"; 
+	var bIsAndroid= sUserAgent.match(/android/i) == "android"; 
+	var bIsCE= sUserAgent.match(/windows ce/i) == "windows ce"; 
+	var bIsWM= sUserAgent.match(/windows mobile/i) == "windows mobile"; 
+	 
+	if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) { 
+	window.location= '__APP__/Home/Student/buyBooks.html?listID={$Think.get.listID}'; 
+	} else { 
+	// window.location= '__APP__/Home/Student/choosebook.html?listID={$Think.get.listID}'; 
+	} 
+	} 
+	browserRedirect(); 
+	</script>
+	<script type="text/javascript">var book='{$jsondata}';</script>
+	<script type="text/javascript" src="__PUBLIC__/js/starBookList.js"></script>
+	
+</head>
+<body>
+	<header>
+		<div id="head">
+			<div id="logo">
+				<a href="http://www.xingkong.us"><img src="__PUBLIC__/images/logo.png" /></a>
+				<img src="__PUBLIC__/images/copyright.png" style="margin-left:10%;margin-bottom:8px" />
+			</div>
+		</div>
+		<div id="choose">
+			<div id="chooseCon">
+				<p>温馨提示：为方便学委统计名单，请同学们如实填写姓名和学号，并在需要购买的书本后面打√，再按提交按钮即可完成购书流程，提交后如需修改请联系班级学委。</p>
+			</div>
+		</div>
+	</header>
+	<!-- studentlist.php -->
+	<form method="post" action="submit.html?listID={$Think.get.listID}" id="juMent">
+		<div id="container">
+			<div id="title">
+				<div id="title_left">书单1</div>
+					<div id="title_right">
+
+						<span>姓名：</span>
+						<input type="text" name="username" id="stuName" placeholder="请输入姓名" />
+						<span>学号：</span>
+						<input type="text" name="stunum" id="stuNum" placeholder="请输入12位学号" maxlength="12" />
+					</div>
+				</div>
+			 <div id="bookShelf">
+				<div id="type">
+					<ul>
+						<li>书名</li>
+						<li>价格</li>
+						<li>折后价</li>
+						<li>是否购买</li>
+					</ul>
+				</div>
+			</div>
+			<div id="total">
+				<span>总价：</span>
+				<input type="text" value="0" id="selectTotal" readonly />
+			</div>
+			<input type="submit" name="ensure" id="ensure" value="提交" />
+		</div>
+	</form>
+</body>
+</html>

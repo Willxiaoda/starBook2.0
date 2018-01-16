@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>购买书者</title>
+	<link rel="stylesheet" href="__PUBLIC__/css/J_customers.css" />
+	<script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+</head>
+<body>
+	<header>
+		<div id="head">
+			<div id="logo">
+				<a href="http://www.xingkong.us"><img src="__PUBLIC__/images/logo.png" /></a>
+				<img src="__PUBLIC__/images/copyright.png" style="margin-left:10%;margin-bottom:8px" />
+			</div>
+		</div>
+		<div id="choose">
+			<div id="num"><span>目前共有{$num}人填写了此书单</span></div>
+		</div>
+	</header>
+	<div id="container">
+		<div id="name">
+			<div id="up-right">
+				<a href="bookCollect.html?listID={$Think.get.listID}">
+					<input type="button" value="返回">
+				</a>
+			</div>
+			<!-- 此位置有一个id为up的div  js动态添加 -->
+		</div>
+		<div id="namelist">
+			<ul>
+				<li1>姓名</li1>
+				<li2>学号</li2>
+				<li3 style="position:relative;	left:50px   ">编辑</li3>
+			</ul>
+		</div>
+	</div>
+<!-- 	<div id="manage">
+			<div id="add">+</div>
+			<div id="reduce">-</div>
+	</div> -->	
+	<!-- <div id= "foot">@星空技术研发中心创作</div> -->
+</body>
+<script type="text/javascript">var num ='{$jsondata}'</script>
+<script type="text/javascript" src="__PUBLIC__/js/J_customers.js" ></script>
+</html>

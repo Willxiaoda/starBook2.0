@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>书单详情</title>
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/D_bookList.css" />
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/bookCollect.css" />
+</head>
+<body>
+	<header>
+		<div id="head">
+			<div id="logo">
+				<a href="http://www.xingkong.us"><img src="__PUBLIC__/images/logo.png" /></a>
+				<img src="__PUBLIC__/images/copyright.png" style="margin-left:10%;margin-bottom:8px" />
+			</div>
+		</div>
+	</header>
+	<div id="container">
+		<div id="title">
+			<div id="title_left" style="width:600px">书单哈哈哈哈哈哈</div>
+				<div id="title_right">
+					<a href="situation?listID={$Think.get.listID}"><span>点击查看已购买详情</span></a>
+					<a href="main.html">返回</a>
+				</div>
+			</div>
+		 <div id="bookShelf">
+			<div id="type">
+				<ul>
+					<li>书名</li>
+					<li>价格</li>
+					<li>折后价</li>
+					<li>数量</li>
+				</ul>
+			</div>
+		</div>
+		<div id="total"><span>总价：</span><input type="text" name="totalMoney" id="totalMoney" readonly /></div>
+	</div>
+</body>
+<script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+<script type="text/javascript">var book = '{$jsondata}';</script>
+<script type="text/javascript" src="__PUBLIC__/js/bookCollect.js"></script>
+</html>

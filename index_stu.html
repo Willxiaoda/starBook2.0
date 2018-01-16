@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<script type="text/javascript">
+			var user = {};
+			
+			setTimeout(function(){
+				var con = document.getElementById('body');
+				
+				user.controller.start(con);
+			},500);			
+		</script>
+		
+		<script src="view/userTemplate.js" type="text/javascript" charset="utf-8"></script>
+		<script src="controller/controler.js" type="text/javascript" charset="utf-8"></script>
+		<script src="controller/index.js" type="text/javascript" charset="utf-8"></script>
+		<script src="controller/common.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="body" id="body">
+			<!-- 
+			<input type="text" name="username" id="username" placeholder = "请输入用户名" />
+			<input type="text" name="pwd" id="pwd" placeholder = "请输入密码" />
+			<input type="text" name="conPWD" id="conPWD" placeholder = "请再次确认密码" />
+			<div class="loginPageBtn">登录</div>
+			 -->
+		</div>
+	</body>
+</html>

@@ -1,0 +1,224 @@
+img,
+table,
+a,
+body,
+html,
+p,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+button,
+input,
+textarea,
+th,
+td,
+pre{
+	padding: 0px;
+	margin:0px;
+}
+body{
+	height: 100%;
+	font-family: '微软雅黑';
+}
+header{
+	width: 100%;
+	color: #11449e;
+	font-size: 14px;
+	min-width: 1024px;
+	font-family: "微软雅黑";
+}
+
+header #head{
+	width: 100%;
+	height: 80px;
+	background: -webkit-linear-gradient(#c5d4e7, #ffffff); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(#c5d4e7, #ffffff); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(#c5d4e7, #ffffff); /* Firefox 3.6 - 15 */
+    background: linear-gradient(#c5d4e7, #ffffff); /* 标准的语法 */
+}
+
+/*星空logo*/
+header #head #logo{
+	width: 1024px;
+	height: 80px;
+	margin: 0 auto;
+}
+
+header #choose{
+	width: 100%;
+	height: 40px;
+	margin-top: 15px;
+	line-height: 40px;
+	background-color: #cbdbf1;
+}
+
+header #choose #chooseCon{
+	width: 1024px;
+	text-align: center;
+	margin: 0 auto;
+}
+#content{
+	width: 1000px;
+	height: 100%;
+	margin: 0 auto;
+	/*border: 1px solid red;*/
+	margin-top: 2%
+}
+
+#button{
+	width: 1000px;
+	height: 80px;
+	border-bottom: 3px solid #000;
+}
+
+#content #button #add{
+	cursor: pointer;
+	width: 120px;
+	height: 50px;
+	border-radius: 10%;
+	background: buttonface;
+	color: #11449e;
+	font-weight: bold;
+	font-size: 20px;
+	border: none;
+	font-family: '微软雅黑';
+
+			/*background: url();*/
+}
+
+ul{
+	list-style:none;
+	width:900px;
+	height:100px;
+	line-height:80px;
+	border-bottom:1px solid #000;
+	font-family: "微软雅黑";
+	/*color: #0000ff;*/
+	/*border-top:0px;*/
+	font-size:18px;
+	margin:  20px auto;
+}
+ul li{
+	display: block;
+	height: 100px;
+	width: 50px;
+	float: left;
+	margin-left: 40px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	text-align: center;
+}
+.sends{
+	width: 180px;
+	margin-left: 80px;
+}
+.send{
+
+	width: 100px;
+	height: 40px;
+	/*float: right;*/
+	/*line-height: 80px;*/
+	margin: 8px;
+	margin-left: 30px;
+	background: buttonface;
+	font-weight: bold;
+	font-size: 20px;
+	border: none;
+	cursor: pointer;
+}
+.book{
+	/*background: red;*/
+	width: 150px;
+	font-size: 30px;
+	font-weight: bold;
+}
+.link{
+	width: 220px;
+}
+a{
+	text-decoration: none;
+	color: #000;
+	cursor: pointer;
+}
+/*#foot{
+	width: 100%;
+	height: 30px;
+	background-color:Lavender;
+	color: #000;
+	text-align: center;
+	font-family: "微软雅黑";
+	font-size: 20px;
+}*/
+span{
+	cursor: pointer;
+}
+/*遮罩层*/
+.mask{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: repeat-y;
+	background-color: rgba(0,0,0,0.6);
+	display: none;
+	transition:background-color 1s ease;
+	webkit-transition:background-color 1s ease;
+}
+.mask .dialog{
+	/*position: relative;*/
+	position: fixed;
+	width: 600px;
+	height: 400px;
+	left: 50%;
+	top: 50%;
+	margin-left: -300px;
+	margin-top: -200px;
+	background-color: white;
+}
+.mask .dialog .title{
+	padding: 30px 60px;
+	font-size: 36px;
+}
+.mask .dialog .main{
+	border-top: 1px solid #ccc;
+	width: 480px;
+	height: 200px;
+	font-size: 18px;
+	padding: 50px 0 0 30px;
+}
+/*.mask .dialog .main a{
+	position: relative;
+	top: 20px;
+	left: 30px;
+	display: block;
+	text-decoration: underline;
+	color: blue;
+}*/
+.mask .dialog .main textarea{
+	position: relative;
+	width: 470px;
+	height: 80px;
+	top: 20px;
+	left: 30px;
+	display: block;
+	color: blue;
+	font-size: 20px;
+	text-decoration: underline;
+	overflow:hidden;/*去除侧栏滚动条*/
+	 resize : none;/*去除侧栏右下角固定框*/
+	border: none;/*隐藏边框*/
+}
+
+/*复制内容到粘贴板*/
+.mask .dialog .main #copy{
+	width: 130px;
+	height: 30px;
+	display: block;
+	margin: 30px auto 0;
+}
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>登录-手机版</title>
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/mobileLogin.css">
+	<script type="text/javascript">
+	function browserRedirect() { 
+	var sUserAgent= navigator.userAgent.toLowerCase(); 
+	var bIsIpad= sUserAgent.match(/ipad/i) == "ipad"; 
+	var bIsIphoneOs= sUserAgent.match(/iphone os/i) == "iphone os"; 
+	var bIsMidp= sUserAgent.match(/midp/i) == "midp"; 
+	var bIsUc7= sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4"; 
+	var bIsUc= sUserAgent.match(/ucweb/i) == "ucweb"; 
+	var bIsAndroid= sUserAgent.match(/android/i) == "android"; 
+	var bIsCE= sUserAgent.match(/windows ce/i) == "windows ce"; 
+	var bIsWM= sUserAgent.match(/windows mobile/i) == "windows mobile"; 
+	 
+	if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) { 
+	//window.location.href= '__APP__/Home/index/mobileLogin.html'; 
+	} else { 
+	window.location= '__APP__/Home/index/index.html'; 
+	} 
+	} 
+	browserRedirect(); 
+	</script>
+	<script type="text/javascript" src="__PUBLIC__/js/login1.js" ></script>
+	<style type="text/css">
+body{
+	width: 100%;
+	height: 100%;
+	background-image: url(__PUBLIC__//images/llbox.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 50% 80%;
+}
+#container #register{
+	width: 190px;
+	height: 100px;
+	background-image: url(__PUBLIC__//images/register1.png);	
+	background-size:cover;
+	border: none;
+	outline:none;
+	float: left;
+	cursor: pointer;
+}
+#Logins{
+	display: block;
+	width: 190px;
+	height: 100px;
+	background-image: url(__PUBLIC__//images/login1.png);	
+	background-size: cover;
+	border: none;
+	outline:none;
+	float: right;
+	cursor: pointer;
+
+}
+	</style>
+</head>
+<body>
+	<header>
+		
+	</header>
+	<div id="container">
+		<div id="mobileLogo">
+			<img src="__PUBLIC__/images/mobileLogo.png">
+		</div>
+			<!-- <img src="./images/lbox1.png" alt=""> -->
+		<div id="form"> 
+			<!-- <form action="Login.php" method="POST" name="Login" id="Login"> --><form action="__APP__/Home/index/login.html" method="POST" id="Login"> 
+			<label for="username">用户名：</label><br>
+			<input type="text" id="username" name="studentnum" placeholder="请输入学号" maxlength="12">
+			<span id="conten">请输入12位的正确学号!</span>
+			<br><label for="password">密码：</label><br>
+			<input type="password" id="psd" placeholder="请输入密码" name="password">
+			<span id="conten2">请输入密码</span>
+			<!-- <br><input type="checkbox" id="remember" >记住密码 -->
+			<div style="height:100px;width:510px;margin:80px auto 80px;">
+				<a href="mobileRegister.html"><input type="text" readonly value="  " id="register"  ></a>
+				
+				<input type="submit" value="  " id="Logins" >
+				</form>
+			</div>
+		</div>
+	</div><!--container结束-->
+	<footer>
+		<div id="footer">©星空学生创新中心</div>
+	</footer>
+</body>
+</html>

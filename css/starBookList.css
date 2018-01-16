@@ -1,0 +1,201 @@
+body,
+html,
+p,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+button,
+input,
+textarea,
+th,
+td,
+pre{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	font-family: "微软雅黑";
+}
+
+header{
+	width: 100%;
+	color: #11449e;
+	font-size: 14px;
+	min-width: 1024px;
+	font-family: "微软雅黑";
+}
+
+header #head{
+	width: 100%;
+	height: 80px;
+	background: -webkit-linear-gradient(#c5d4e7, #ffffff); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(#c5d4e7, #ffffff); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(#c5d4e7, #ffffff); /* Firefox 3.6 - 15 */
+    background: linear-gradient(#c5d4e7, #ffffff); /* 标准的语法 */
+}
+
+header #head #logo{
+	width: 1024px;
+	height: 80px;
+	margin: 0 auto;
+}
+
+header #choose{
+	width: 100%;
+	height: 40px;
+	margin-top: 15px;
+	line-height: 40px;
+	background-color: #cbdbf1;
+}
+
+header #choose #chooseCon{
+	width: 1024px;
+	text-align: center;
+	margin: 0 auto;
+}
+
+#container{
+	width: 1024px;
+	overflow: hidden;/*超出隐藏,清除浮动*/
+	margin: 10px auto 0;
+}
+
+#title{
+	height: 60px;
+	color: #11449e;
+	font-family: "微软雅黑";
+	border-bottom: 1px solid #000;
+}
+
+/*书单1*/
+#title #title_left{
+	float: left;
+	width: 480px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 18px;/*书单*/
+	margin-top: 10px;
+	margin-left: 30px;
+	display: block;
+	color: #11449e;
+	font-weight: bold;
+	font-family: "微软雅黑";
+	border: none;
+}
+
+/*姓名学号*/
+#title #title_right{
+	float: right;
+	margin: 15px 30px 0 0;
+}
+
+#container #title #title_right input{
+	width: 160px;
+	height: 20px;
+	color: #323131;
+	font-size: 16px;
+	font-family: "微软雅黑";
+	margin-right: 20px;
+}
+
+#container #bookShelf{
+	width: 850px;
+	margin: 0 auto;
+	color: #11449e;
+	font-family: "微软雅黑";
+	font-size: 18px;
+}
+
+#container #bookShelf #type{
+	height: 80px;
+	font-family: "微软雅黑";
+	font-size: 20px;
+	border-bottom: 1px solid #000;
+}
+
+#container #bookShelf #type ul>li:first-child{
+	width: 450px;
+	text-align: left;
+	padding-left: 60px;
+}
+
+#container #bookShelf #type ul>li:last-child{
+	text-align: right;
+}
+
+#container #bookShelf #type li{
+	float: left;
+	width: 110px;
+	text-align: center;
+	line-height: 80px;
+	list-style: none;
+}
+
+#container #bookShelf .bookList{
+	height: 80px;
+	font-size: 18px;
+	border-bottom: 1px solid #726E6E;
+}
+
+#container #bookShelf .bookList li{
+	float: left;
+	width: 110px;
+	height: 80px;
+	text-align: center;
+	list-style: none;
+	line-height: 80px;
+}
+
+#container #bookShelf .bookList ul>li:first-child{
+	width: 480px;
+	text-align: left;
+	padding-left: 30px;
+	white-space: nowrap;
+	text-overflow:ellipsis; 
+	overflow: hidden;
+}
+
+#container #bookShelf .bookList ul>li:last-child{
+	padding-left: 10px;
+	text-align: center;
+}
+
+#container #bookShelf .bookList ul>li:last-child input{
+	width: 25px;
+	height: 25px;
+}
+
+#container #total{
+	margin: 40px 0 100px 100px;
+	color: red;
+	float: left;
+	font-size: 30px;
+}
+#container #total input{
+	width: 180px;
+	height: 40px;
+	color: red;
+	font-size: 30px;
+	border: none;
+}
+
+/*提交按钮*/
+#container #ensure{
+	width: 40px;
+	height: 30px;
+	float: right;
+	margin: 50px 120px 100px 0;
+	font-size: 16px;
+	color: #11449e;
+	font-family: "微软雅黑";
+	/*font-weight: bold;*/
+
+}
+pre{
+	font-weight: bolder;
+	font-size: 20px;
+}

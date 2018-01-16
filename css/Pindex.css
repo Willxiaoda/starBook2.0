@@ -1,0 +1,129 @@
+
+#container,#login,#Registers,#username,
+#studentnum,
+#password,
+#register,body,html,p,#re,div,img{
+	margin: 0;
+	padding:0;
+}
+html,body{
+	width: 100%;
+	/*height: 100%;*/
+}
+#container{
+	width: 80%;
+	margin: 0 auto;
+	/*height: 100%;*/
+	/*padding-top:70%;*/
+	margin: 0px auto 80px;
+	/*text-align: center;*/
+	/*height: 650px;*/
+}
+#container #name{
+
+}
+#images{
+	margin: 130px auto 38px;
+    /*left: 22%;*/
+    /*margin-left: 32%;*/
+    text-align: center;
+    position: relative;
+    top: 10px;
+}
+#container img{
+	width: 55%;
+	height: 55%;
+	/*position: fixed;*/
+}
+#login{
+	display: block;
+	/*position: absolute;
+	left: 700px;
+	top: 150px;*/
+	/*text-align: center;*/
+	width: 74%;
+	height: auto;
+	color: #72472D;
+	margin: 0 auto;
+}
+#Registers{
+	width:100%;
+	height: 70%; 
+	margin-left: 12px;
+	/*margin:  65% auto;	*/
+	/*padding: 83px 0px 0px 275px;*/
+}
+input::-webkit-input-placeholder { 
+		/*color:#D0C3E0 ;*/
+		color:#bc5211;
+		opacity: 0.7;
+
+}
+label{
+	/*position: relative;*/
+	/*bottom: 5px;*/
+	font-size: 20px;
+	font-family:"微软雅黑";
+	font-weight: bold;
+	/*float: left;*/
+	/*display: none;*/
+	
+}
+#username{
+	width: 87%;
+    height: 35px;
+    border: none;
+    outline: none;
+    background-color: #f5d4aa;
+}
+#studentnum{
+	width: 87%;
+   height: 35px;
+    border: none;
+    outline: none;
+    background-color: #f5d4aa;
+}
+#password{
+	width: 87%;
+    height: 35px;
+
+    border: none;
+    outline: none;
+    background-color: #f5d4aa;
+}
+#re{
+	width: 91%;
+	height: auto;
+	text-align: center;
+	margin-top: 10px;
+	/*margin:  0 auto;*/
+}
+#register{
+	width: 70px;
+	height: 35px;
+	background-image: url(../images/onsubmit.png);	
+	background-size: cover;
+	border: none;
+	outline:none;
+	cursor: pointer;
+
+}
+
+p{
+	font-size: 12px;
+	font-family: "微软雅黑";
+	color: gray;
+	visibility:hidden;
+	/*display: block;*/
+	/*display: none;*/
+	margin: 0;
+}
+ #footer{
+	width: 160px;
+	margin: 0px auto ;
+	font-size: 18px;
+	color: #9c5f20;
+	position: relative;
+	top: 45px;
+	/*font-weight: bold;*/
+}

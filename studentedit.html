@@ -1,0 +1,48 @@
+
+<!-- 管理员点击修改进入的页面 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>修改我的书单</title>
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/D_bookList.css" />
+</head>
+<body>
+	<header>
+		<div id="head">
+			<div id="logo">
+				<a href="http://www.xingkong.us"><img src="__PUBLIC__/images/logo.png" /></a>
+				<img src="__PUBLIC__/images/copyright.png" style="margin-left:10%;margin-bottom:8px" />
+			</div>
+		</div>
+	</header>
+	<form method="POST" action="stuchange.html?listID={$Think.get.listID}&sid={$Think.get.sid}">
+		<div id="container">
+			<div id="title">
+				<div id="title_content_left">
+					<span>姓名：</span>
+					<input type="text" name="username" id="stuName" readonly />
+					<span>学号：</span>
+					<input type="text" name="stunum" id="stuNum" readonly />
+				</div>
+				<div id="title_content_right">
+					<a href="situation.html?listID={$Think.get.listID}">返回</a>
+				</div>
+			</div>
+			<div id="bookShelf">
+				<div id="type">
+					<ul>
+						<li>书名</li>
+						<li>价格</li>
+						<li>折后价</li>
+						<li>是否购买</li>
+					</ul>
+				</div>
+			</div>
+			<input type="submit" name="ensure" id="ensure" value="更改" />
+		</div>
+	</form>
+</body>
+<script type="text/javascript">var book='{$jsondata}'</script>
+<script type="text/javascript" src="__PUBLIC__/js/studentedit.js"></script>
+</html>
